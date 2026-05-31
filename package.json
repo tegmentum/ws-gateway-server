@@ -1,0 +1,48 @@
+{
+  "name": "@tegmentum/ws-gateway-server",
+  "version": "0.1.0",
+  "description": "Node WebSocket server that bridges browser-hosted wasi-polyfill (TCP + PKCS#11 tunnels) to real host resources. Reference KSW1 server.",
+  "type": "module",
+  "main": "src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./server": "./src/server.mjs",
+    "./pkcs11-backend": "./src/pkcs11-backend.mjs"
+  },
+  "bin": {
+    "ws-gateway-server": "src/bin.mjs"
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@tegmentum/wasi-polyfill": "file:../wasi-polyfill",
+    "ws": "^8.18.0"
+  },
+  "optionalDependencies": {
+    "pkcs11js": "^2.1.6"
+  },
+  "keywords": [
+    "websocket",
+    "wasi",
+    "pkcs11",
+    "tcp-tunnel",
+    "wasm",
+    "ksw1",
+    "wasi-polyfill"
+  ],
+  "license": "Apache-2.0",
+  "author": "Tegmentum",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tegmentum/ws-gateway-server.git"
+  }
+}
